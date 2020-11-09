@@ -2,7 +2,8 @@
 This is a simple OPC UA connection testing tool for the Windows comandline.
 This code extends the exsample application from the OPC UA foundation.
 
-Usage:
+Usage
+
 0. Start the tool with CMD
 1. Specify your OPC UA Url (eg. "opc.tcp://localhost")
 2. if the connection is succesful you can browes throw the server nodes.
@@ -11,4 +12,5 @@ Usage:
   2.3 type 998 to access the node attributes
 
 Upcomming:
+
 - specify credentials for server
