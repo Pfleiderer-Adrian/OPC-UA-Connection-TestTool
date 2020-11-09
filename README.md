@@ -7,8 +7,8 @@ Usage:
 0. Start the tool with CMD
 1. Specify your OPC UA Url (eg. "opc.tcp://localhost")
 2. if the connection is succesful you can browes throw the server nodes.
-* 2.1 type the desiered node index to open the node
-* 2.2 type 999 to go to backwards (prenode)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 type the desiered node index to open the node
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2 type 999 to go to backwards (prenode)
 3 type 998 to access the node attributes
 
 Upcomming:
