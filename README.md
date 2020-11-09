@@ -2,7 +2,7 @@
 This is a simple OPC UA connection testing tool for the Windows comandline.
 This code extends the exsample application from the OPC UA foundation.
 
-Usage
+Usage:
 
 0. Start the tool with CMD
 1. Specify your OPC UA Url (eg. "opc.tcp://localhost")
