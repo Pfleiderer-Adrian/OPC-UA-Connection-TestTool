@@ -31,8 +31,13 @@ namespace Quickstarts.ConsoleReferenceClient
                 // create the UA Client object and connect to configured server.
                 UAClient uaClient = new UAClient(application.ApplicationConfiguration);
 
-                Console.WriteLine("Please specify your Server IP:");
+                Console.WriteLine("Please specify Server IP:");
                 uaClient.ServerUrl = Console.ReadLine();
+                Console.WriteLine("Please specify Username (press enter for anonymus):");
+                uaClient.ServerUserName = Console.ReadLine();
+                Console.WriteLine("Please specify Password (press enter for anonymus):");
+                uaClient.ServerPW = Console.ReadLine();
+
 
                 if (uaClient.Connect())
                 {

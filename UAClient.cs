@@ -27,6 +27,7 @@ namespace Quickstarts.ConsoleReferenceClient
         /// </summary>
         public Session Session => m_session;
 
+
         /// <summary>
         /// Gets or sets the server URL.
         /// </summary>
@@ -39,6 +40,36 @@ namespace Quickstarts.ConsoleReferenceClient
             set
             {
                 m_serverUrl = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the server URL.
+        /// </summary>
+        public string ServerPW
+        {
+            get
+            {
+                return m_serverPW;
+            }
+            set
+            {
+                m_serverPW = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the server URL.
+        /// </summary>
+        public string ServerUserName
+        {
+            get
+            {
+                return m_serverUserName;
+            }
+            set
+            {
+                m_serverUserName = value;
             }
         }
         #endregion
@@ -66,6 +97,12 @@ namespace Quickstarts.ConsoleReferenceClient
                     EndpointConfiguration endpointConfiguration = EndpointConfiguration.Create(m_configuration);
                     ConfiguredEndpoint endpoint = new ConfiguredEndpoint(null, endpointDescription, endpointConfiguration);
 
+                    UserIdentity user;
+                    if (m_serverPW != "" && m_serverUserName != "")
+                        user = new UserIdentity(m_serverUserName, m_serverPW);
+                    else
+                        user = new UserIdentity();
+                    
                     // Create the session
                     Session session = Session.Create(
                         m_configuration,
@@ -74,7 +111,7 @@ namespace Quickstarts.ConsoleReferenceClient
                         false,
                         m_configuration.ApplicationName,
                         30 * 60 * 1000,
-                        new UserIdentity("OpcUaClient","12345678"),
+                        new UserIdentity(m_serverUserName, m_serverPW),
                         null).Result;
 
                     // Assign the created session
@@ -536,7 +573,10 @@ namespace Quickstarts.ConsoleReferenceClient
 
         private ApplicationConfiguration m_configuration;
 
-        private string m_serverUrl = "opc.tcp://localhost";
+        private string m_serverUrl = "";
+        private string m_serverPW = "";
+        private string m_serverUserName = "";
+
 
         private Session m_session;
 
